@@ -5,6 +5,7 @@ class NewUserFirstPostTest < ActionController::IntegrationTest
   
   def setup
     ActionController::Base.perform_caching = true
+    puts "caching path: #{ActionController::Base.page_cache_directory}"
   end
   
   def teardown

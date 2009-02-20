@@ -60,6 +60,7 @@ class NewUserFirstPostTest < ActionController::IntegrationTest
     # back to home
     go_home
   
+    # http://dev.rubyonrails.org/ticket/11449
     # logoff
     get logout_path
     assert_response :redirect
