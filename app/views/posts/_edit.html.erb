@@ -17,11 +17,11 @@
         <h5><%= 'Formatting Help'[] %></h5>
 
         <ul class="help">
-          <li><%= '*bold*'[:formatting_bold] %></li>
-          <li><%= '_italics_'[:formatting_italics] %></li>
-          <li><%= 'bq. <span>(quotes)</span>'[:formatting_blockquote] %></li>
+          <li><%= I18n.t "site.general.formatting_bold" %></li>
+          <li><%= I18n.t "site.general.formatting_italics" %></li>
+          <li><%= I18n.t "site.general.formatting_blockquote" %></li>
           <li>"IBM":http://www.ibm.com</li>
-          <li><%= '* or # <span>(lists)</span>'[:formatting_list] %></li>
+          <li><%= I18n.t "site.general.formatting_list" %></li>
         </ul>
 
       </td>
@@ -29,7 +29,7 @@
     <tr>
       <td valign="bottom" style="padding-bottom:15px;">
         <%= ajax_spinner_for "editbox", "spinner_black.gif" %>
-        <%= submit_tag 'Save Changes'[], :or => link_to_function('cancel'[], "EditForm.cancel()"), :tabindex => 2 %>
+        <%= submit_tag "#{I18n.t "site.general.save_changes"}", :or => link_to_function("#{I18n.t "site.general.save_changes"}", "EditForm.cancel()"), :tabindex => 2 %>
       </td>
     </tr>
   </table>

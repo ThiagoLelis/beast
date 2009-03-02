@@ -1,33 +1,33 @@
 <% content_for :right do %>
-<h5><%= 'Find a User'[] %></h5>
+<h5><%= I18n.t "site.users.index.find_a_user" %></h5>
 
 <% form_tag users_path, :method => 'get' do -%>
 <p>
-<label><%= 'Display name or login'[] %></label>
+<label><%= (I18n.t "site.users.index.display_name_or_login").to_s %></label>
 <%= text_field_tag :q, params[:q] %> 
-<%= submit_tag "Search"[:search_title] %></p>
+<%= submit_tag I18n.t "site.users.index.search_user" %></p>
 <% end -%>
 
 <% end -%>
 
-<h1 style="margin-top:0;"><%= 'Users'[:users_title] %></h1>
+<h1 style="margin-top:0;"><%= I18n.t "site.users.index.users_title" %></h1>
 <p class="subtitle">
-<%= number_with_delimiter(@user_count) %> <%= 'users'[] %>, <%= @active %> <%= 'active'[] %>, <%= @user_count-@active %> <%= 'lurking'[] %>
+<%= number_with_delimiter(@user_count) %> <%= (I18n.t "site.users.index.users").to_s %>, <%= @active %> <%= (I18n.t "site.users.index.active").to_s %>, <%= @user_count-@active %> <%= (I18n.t "site.users.index.lurking").to_s %>
 </p>
 
 <%= pagination @users %>
 
 <table border="0" cellspacing="0" cellpadding="0" class="wide forums">
   <tr>
-    <th class="la" width="88%"><%= 'Name / Login'[:name_or_login] %></th>
-    <th><%= 'Website'[:website_title] %></th>
-    <th width="1%"><%= 'Posts'[:posts_title] %></th>
+    <th class="la" width="88%"><%= I18n.t "site.users.index.name_or_login" %></th>
+    <th><%= I18n.t "site.users.index.website_title" %></th>
+    <th width="1%"><%= I18n.t "site.users.index.posts_title" %></th>
   </tr>
 <% @users.each do |user|-%>  
   <tr>
     <td><%= link_to h(user.display_name), user_path(user), :class => (user.admin? ? "admin" : nil) %>
       <span style="color:#666">
-      <%= "(admin)"[:admin_in_parens] if user.admin? %>
+      <%= I18n.t "site.users.index.admin_in_parens" if user.admin? %>
       </span>
       </td>
     <td class="la">

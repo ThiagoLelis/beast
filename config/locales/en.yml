@@ -1,0 +1,306 @@
+"en":
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%e %b"
+      long: "%B %e, %Y"
+      only_day: "%e"
+
+    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    order: [ :year, :month, :day ]
+  
+  time:
+    formats:
+      default: "%a %b %d %H:%M:%S %Z %Y"
+      time: "%H:%M"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+      only_second: "%S"
+      date_format: "%b %e, %Y"
+      datetime_format: "%b %e, %Y  %l:%M%p"
+      
+      datetime:
+        formats:
+          default: "%Y-%m-%dT%H:%M:%S%Z"
+          
+    am: 'am'
+    pm: 'pm'
+      
+  datetime:
+    distance_in_words:
+      half_a_minute: 'half a minute'
+      less_than_x_seconds:
+        zero: 'less than 1 second'
+        one: '1 second'
+        other: '{{count}} seconds'
+      x_seconds:
+        one: '1 second'
+        other: '{{count}} seconds'
+      less_than_x_minutes:
+        zero: 'less than a minute'
+        one: '1 minute'
+        other: '{{count}} minutes'
+      x_minutes:
+        one: '1 minute'
+        other: '{{count}} minutes'
+      about_x_hours:
+        one: 'about 1 hour'
+        other: '{{count}} hours'
+      x_days:
+        one: '1 day'
+        other: '{{count}} days'
+      about_x_months:
+        one: 'about 1 month'
+        other: '{{count}} months'
+      x_months:
+        one: '1 month'
+        other: '{{count}} months'
+      about_x_years:
+        one: 'about 1 year'
+        other: '{{count}} years'
+      over_x_years:
+        one: 'over 1 year'
+        other: '{{count}} years'
+      
+  number:
+    format:
+      precision: 3
+      separator: '.'
+      delimiter: ','
+    currency:
+      format:
+        unit: '$'
+        precision: 2
+        format: '%u %n'
+        
+  active_record:
+    error:
+      header_message: ["Couldn't save this {{object_name}}: 1 error", "Couldn't save this {{object_name}}: {{count}} errors."]
+      message: "Please check the following fields:"
+    error_messages:
+      inclusion: "is not included in the list"
+      exclusion: "is not available"
+      invalid: "is not valid"
+      confirmation: "does not match its confirmation"
+      accepted: "must be accepted"
+      empty: "must be given"
+      blank: "must be given"
+      too_long: "is too long (no more than {{count}} characters)"
+      too_short: "is too short (no less than {{count}} characters)"
+      wrong_length: "is not the right length (must be {{count}} characters)"
+      taken: "is not available"
+      not_a_number: "is not a number"
+      greater_than: "must be greater than {{count}}"
+      greater_than_or_equal_to: "must be greater than or equal to {{count}}"
+      equal_to: "must be equal to {{count}}"
+      less_than: "must be less than {{count}}"
+      less_than_or_equal_to: "must be less than or equal to {{count}}"
+      odd: "must be odd"
+      even: "must be even"
+
+  site: 
+    general:
+      searching_for: Searching for 
+      recent_post: "Recent Posts"
+      formatting_bold: "*bold*"
+      formatting_italics: "_italics_"
+      formatting_blockquote: "bq. <span>(quotes)</span>"
+      formatting_list: "* or # <span>(lists)</span>"        
+      tile_plural: "Forumss"
+      title: "Forum"  
+      topics: "Topic(s)"
+      topic: "Topic"
+      posts: "Post(s)"
+      posts_found: "Post(s) Found"
+      voices: "voice(s)"
+      text04: "Create"
+      save: "Save"
+      edit: "Edit"
+      delete: "Delete"
+      cancel: "Cancel"
+      save_changes: "Save Changes"
+      login: "Login"
+      password: "Password"
+      reset_password: Reset Password
+      by_user: "By"
+      in_forum: "In"
+      view: "view"
+      page: "page"
+      locked: "Locked"
+      administrator_title: "Administrator"
+      moderator_title: "Moderator"
+      last: "Last"
+      voices: "Voice(s)"
+    layouts:
+      head:
+        title: "Beast"
+        menutitle: "Beast"
+        menu01: "Forums"
+        menu02: "Users"
+        menu03: "Search"
+        menu04: "Settings"
+        menu05: "Logout"
+        menu06: "Signup"
+      application:
+        text1: "Two's company... Three's a forum. More's a Beast."
+        text2: "Powered by"
+      post:
+        topic_posted_by: "{{title}} posted by {{user}} @ {{date}}"
+        topic_replied_by: "{{title}} replied by {{user}} @ {{date}}"  
+    monitorships:
+       monitoring_topic: "Monitoring topic"  
+    forums:
+      index:
+        What_is_Beast: "What is Beast?"
+        descriptin_beast: "A small, light-weight forum in Rails with a scary name and a goal of around 500 lines of code when we're done."
+        create_new_forum: "Create new forum"
+        last_post: "Last Post"
+        recent_activity: "Recent Activity"
+        no_recent_activity: "No recent activity"
+        edit: "Edit"
+        users_online: "Users Online"
+      edit:
+        edit_forum: "Edit forum"  
+        save_forum: "Save forum"
+      new:
+        new_forum: "New forum"
+      show:
+        forum_unmoderated: "This forum is currently unmoderated."
+        be_courteous: "Please always be courteous."
+        topic: "Topic"
+        posts: "Posts"
+        views: "Views"
+        last_post: "Last Post"
+        topic_locked: ", this topic is locked."
+        recent_activity: "Recent Activity"
+        no_recent_activity: "No recent activity"
+        stick: "Sticky"
+        new_topic: "New topic"
+      _form:
+        title: "Title"  
+        position: "Position"
+        description: "Description"
+    posts:
+      edit:
+        delete_post: "Delete post"
+        delete_post_conf: "Delete this post?  Are you sure?"
+      index:
+        posts_feed_title: "{{search_posts_title}} | Beast" 
+        feed_language: "en-us"
+      monitored:
+        users_monitored_topics: "'s Monitored Topics"
+        posts_user_is_monitoring: "Posts that {{user}} is monitoring"
+        users_monitored_topics: "{{name}}'s Monitored Topics"
+      create:
+        post_something_message: "Please post something at least..."
+        locked_topic: "This topic is locked" 
+      destroy:
+        post_deleted_message: "Post of '{{title}}' was deleted."  
+    sessions:
+      new:
+        login_with_OpenID: "login with OpenID"
+        email_directions: "Enter your email, and a brand new login key will be sent to you.  Click the link in the email to log in, and then change your password."
+        email_submit: E-mail me the link
+    topics:    
+      _form:
+        topic_title: "Title"
+        sticky_title: "Sticky"
+        locked_title: "Locked"
+        body_title: "Body"
+      new:
+        post_topic: "Post Topic"
+        new_topic: "New Topic"
+      edit:
+        edit_topic: "Edit Topic"      
+      show:
+        voices_title: "Voices"    
+        delete_topic_conf: "Delete this topic?  Are you sure?"
+        edit_post: "Edit post"
+        locked_topic: "This topic is locked"
+        reply_to_topic: "Reply to topic"
+        topic_locked_title: "Topic locked"
+        monitoring_topic: Monitoring topic
+        monitor_topic: Monitor topic
+        formatting_help: "Formatting Help"
+        save_reply: "Save Reply"
+        recent_posts_in_topic: "Recent Posts in '{{topic}}' | Beast"
+      destroy:
+        topic_deleted_message: "Topic '{{title}}' was deleted."  
+    user_mailer:
+      signup:
+        beast_welcome: "Welcome to Beast"    
+        activation: "Please visit the link below to activate your account."      
+    users:
+      identity_url: "Identity Url"
+      open_id_field: "Enter your OpenID Identity Url if you know it"
+      open_id_field_extended: "Enter your OpenID Identity Url if you know it.  If your Identity Url supports the {sreg} extension, you can {login_link} and create your account automatically."
+      username: "Username"
+      email: "Email"
+      password_title: "Password"
+      _contact_info:
+        users_profile: "User Profile"
+        display_name_title: "Display Name"
+        website_title: "Website"
+        without_http: "without http://"
+        bio_title: "Bio"
+      _form:
+        login_field: "Logins should start with least 2 characters and may consist of letters, numbers, or the underscore."
+        display_name_title: "Display Name"
+        password_field: "Enter your desired password twice.  It must be at least 5 characters."
+        once: "once"
+        and_then_again: "and then again"
+      _settings:
+        basics_title: "Basics"
+        change_login: "Please change your login"
+        login_field: "Logins should start with least 2 characters and may consist of letters, numbers, or the underscore"
+        password_field: "Enter a new password twice to change your password. (must be longer than 5 characters)"
+        once: "once"
+        and_again: "and again"
+      create:
+        could_not_find_account_message: "I could not find an account with the email address '{{email}}'. Did you type it correctly?"  
+        signup_permanent_error_message: "A permanent error occured while sending the signup message to '{{email}}'. Please check the e-mail address."
+        signup_cannot_sent_message: "The signup message cannot be sent to '{{email}}' at this moment. Please, try again later."
+        temporary_login_message: "A temporary login email has been sent to '{{email}}'."
+        account_activation_message: "An account activation email has been sent to '{{email}}'."
+      edit:
+        avatars_title: "Avatars"
+        gravatar_notice: "To have your very own avatar displayed on this forum visit {{gravatar}} and sign up for a free gravatar."    
+        settings_title: "Settings" 
+        change_email_or_password: "Change e-mail or password" 
+        for_user: "for {user}"
+        update_profile: "Update Profile"
+      index:
+        users_title: "Users"      
+        name_or_login: "Name / Login"
+        website_title: "Website"
+        posts_title: "Posts"
+        admin_in_parens: "(admin)"
+        find_a_user: "Find a User"
+        search_user: "Search"
+        display_name_or_login: "Display name or login"
+        users: "Users"
+        active: "active"
+        lurking: "lurking"
+      new:
+        signup: "Signup"
+      show:
+        admin_and_moderation: "Admin &amp; Moderation" 
+        remove_moderated_forum: "This user can moderate the following forums.  Click one to remove."
+        remove_user_as_moderator: "Remove user as moderator for"
+        view: "view"   
+        view_all: "All"
+        monitored: "monitored"
+        website_title: "Website"
+        user_administrador: "User is an administrator"
+        user_since: "User since"
+    footer: 
+      paragrafo01: "The names and logos for WALK, WALKWEB, WALKSERVER, POSXML and Plano B\xC3\xAA are registered trademarks of Plano B\xC3\xAA, LTDA."
+      paragrafo02: "All text and design are copyright \xC2\xA92005-2009 Plano B\xC3\xAA, LTDA."
+      paragrafo03: All rights reserved.
+  support: 
+    array: 
+      skip_last_comma: false
+      sentence_connector: and

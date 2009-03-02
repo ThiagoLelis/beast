@@ -48,7 +48,7 @@ Rails::Initializer.run do |config|
   # The internationalization framework can be changed to have another default locale (standard is :en) or more load paths.
   # All files from config/locales/*.rb,yml are added automatically.
   # config.i18n.load_path << Dir[File.join(RAILS_ROOT, 'my', 'locales', '*.{rb,yml}')]
-  # config.i18n.default_locale = :de
+  # config.i18n.default_locale = "en"
 
   # Your secret key for verifying cookie session data integrity.
   # If you change this key, all old sessions will become invalid!
@@ -84,7 +84,7 @@ end
 # end
 
 # Include your application configuration below
-PASSWORD_SALT = '48e45be7d489cbb0ab582d26e2168621' unless Object.const_defined?(:PASSWORD_SALT)
+PASSWORD_SALT = '48e45be7d489cbb0ab582d26e2168631' unless Object.const_defined?(:PASSWORD_SALT)
 
 # monkey patch redcloth
 # todo: this patch was meant for 3.0.4, which is quite old

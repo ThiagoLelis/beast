@@ -3,18 +3,18 @@
 <% content_for :right do %>
 <% if admin? %>
 <% form_for :user, :url => admin_user_path(@user), :html => {:class => "xdialog"} do |f| -%>
-  <h6><%= 'Admin &amp; Moderation'[:admin_and_moderation] %></h6>
+  <h6><%= I18n.t "site.users.show.admin_and_moderation" %></h6>
 
   <% unless @user.forums.empty? -%>
 
-	<p><%= 'This user can moderate the following forums.  Click one to remove.'[:remove_moderated_forum] %></p>
+	<p><%= I18n.t "site.users.show.remove_moderated_forum" %></p>
 
   <ul class="flat">
   <% @user.forums.find(:all, :select => "#{Forum.table_name}.*, #{Moderatorship.table_name}.id as moderatorship_id").each do |forum| -%>
     <li>
       <%#= link_to forum.name, forum_path(forum), :class => "hidden" %>
       <%#= link_to 'remove', moderator_path(@user, forum.moderatorship_id), :method => :delete %>
-      <%= link_to forum.name, user_moderator_path(@user, forum.moderatorship_id), :method => :delete, :confirm => "#{'Remove user as moderator for'[:remove_user_as_moderator]} #{forum.name}?" %>
+      <%= link_to forum.name, user_moderator_path(@user, forum.moderatorship_id), :method => :delete, :confirm => "#{I18n.t "site.users.show.remove_user_as_moderator"} #{forum.name}?" %>
     </li>
   <% end -%>
   </ul>
@@ -27,9 +27,9 @@
     <%= options_from_collection_for_select(Forum.find(:all, :order => 'position') - @user.forums, "id", "name") %>
   </select></p>
 
-  <p><label><%= f.check_box :admin %> <%= 'User is an administrator'[] %></label></p>
+  <p><label><%= f.check_box :admin %> <%= I18n.t "site.users.show.user_administrador" %></label></p>
 
-  <p><%= submit_tag 'Save'[:save_title] %></p>
+  <p><%= submit_tag I18n.t "site.general.save" %></p>
 <% end -%>
 <% end -%>
 <% end %>
@@ -41,17 +41,17 @@
 <p class="subtitle">
   <%= feed_icon_tag @user.display_name, formatted_user_posts_path(:user_id => @user, :format => :rss) %>
   <span>
-    <%= '{count} topics'[(count=@user.topics.size)==1 ? :topic_count : :topics_count, number_with_delimiter(count)] %>, 
-    <%= '{count} posts'[(count=@user.posts.size)==1 ? :post_count : :posts_count, number_with_delimiter(count)] %>
-    (<%= 'view'[] %> <%= link_to 'all'[:view_all], user_posts_path(@user) %> | 
-    <%= link_to 'monitored'[], monitored_posts_path(@user) %> <%= 'posts'[] %>)<br />
+    <%= number_with_delimiter(@user.topics.size) + " " + (I18n.t "site.general.topics").to_s %>, 
+    <%= number_with_delimiter(@user.posts.size) + " " + (I18n.t "site.general.posts").to_s %>
+    (<%= I18n.t "site.users.show.view" %> <%= link_to "#{I18n.t "site.users.show.view_all"}", user_posts_path(@user) %> | 
+    <%= link_to "#{I18n.t "site.users.show.monitored"}", monitored_posts_path(@user) %> <%= I18n.t "site.general.posts" %>)<br />
   </span>
 </p>
 
 <%= @user.bio_html %>
 
 <% unless @user.website.blank? -%>
-<p><strong><%= 'Website:'[:website_title] %></strong> <%= white_list link_to(@user.website.gsub("http://",""), "http://" + @user.website.gsub("http://","")) %>
+<p><strong><%= I18n.t "site.users.show.website_title" %></strong> <%= white_list link_to(@user.website.gsub("http://",""), "http://" + @user.website.gsub("http://","")) %>
 <% end -%>
-<p><%= 'User since'[] %> <%= @user.created_at.to_date.to_s :long %></p>
+<p><%= I18n.t "site.users.show.user_since" %> <%= @user.created_at.to_date.to_s :long %></p>
 

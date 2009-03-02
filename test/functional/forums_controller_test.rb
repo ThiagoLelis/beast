@@ -22,8 +22,8 @@ class ForumsControllerTest < Test::Unit::TestCase
   end
   
   def test_forum_view_sets_page_variable
-    get :show, :id =>1, :page =>3 
-    assert_equal 3, session[:forum_page][1]
+    get :show, :id =>1, :page =>1
+    assert_equal 1, session[:forum_page][1]
   end
 
 

@@ -14,8 +14,8 @@
 <% end -%>
 </ul>
 <% else -%>
-<p><%= 'This forum is currently unmoderated.'[:forum_is_unmoderated] %></p>
-<p><%= 'Please always be courteous.'[:please_be_courteous] %></p>
+<p><%= I18n.t "site.forums.show.forum_unmoderated" %></p>
+<p><%= I18n.t "site.forums.show.be_courteous" %></p>
 <% end -%>
 
 <% end %>
@@ -23,7 +23,7 @@
 <% @page_title = @forum.name %>
 
 <div class="crumbs">
-<%= link_to 'Forums'[:forums_title], home_path %> <span class="arrow">&rarr;</span>
+<%= link_to "#{I18n.t "site.general.tile_plural"}", home_path %> <span class="arrow">&rarr;</span>
 </div>
 <h1 style="margin-top:0.5em">
   <%= h @forum.name %>
@@ -31,8 +31,8 @@
 
 <p class="subtitle">
   <%= feed_icon_tag @forum.name, formatted_forum_posts_path(@forum, :rss) %> 
-  <%= '{count} topic(s)'[(count=@forum.topics.size)==1 ? :topic_count : :topics_count, number_with_delimiter(count)] %>, 
-  <%= '{count} post(s)'[(count=@forum.posts.size)==1 ? :post_count : :posts_count, number_with_delimiter(count)] %>
+  <%= number_with_delimiter(@forum.topics.size) + " " + "#{I18n.t "site.general.topics"}"  %>,  
+          <%= number_with_delimiter(@forum.posts.size) + " " + "#{I18n.t "site.general.posts"}" %>
 </p>
 
 <% if @topics.total_pages > 1 -%>
@@ -44,10 +44,10 @@
 
 <table border="0" cellspacing="0" cellpadding="0" class="wide topics">
 <tr>
-  <th class="la" colspan="2"><%= 'Topic'[:topic_title] %></th>
-  <th width="1%"><%= 'Posts'[:posts_title] %></th>
-  <th width="1%"><%= 'Views'[:views_title] %></th>
-  <th class="la"><%= 'Last post'[:last_post] %></th>
+  <th class="la" colspan="2"><%= I18n.t "site.forums.show.topic" %></th>
+  <th width="1%"><%= I18n.t "site.forums.show.posts" %></th>
+  <th width="1%"><%= I18n.t "site.forums.show.views" %></th>
+  <th class="la"><%= I18n.t "site.forums.show.last_post" %></th>
 </tr>
 <% for topic in @topics %>
 <tr class="hentry">
@@ -57,39 +57,39 @@
     color = ""
     if topic.locked?
       icon = "lock"
-      post = ", this topic is locked."[:comma_locked_topic]
+      post = I18n.t "site.forums.show.topic_locked"
       color = "darkgrey"
     end
     %>
     <% if recent_topic_activity(topic) %>
-    <%= image_tag "clearbits/#{icon}.gif", :class => "icon green", :title => "Recent activity"[]+"#{post}" %>
+    <%= image_tag "clearbits/#{icon}.gif", :class => "icon green", :title => "#{I18n.t "site.forums.show.recent_activity"}"+"#{post}" %>
     <% else %>
-      <%= image_tag "clearbits/#{icon}.gif", :class => "icon grey #{color}", :title => "No recent activity"[]+"#{post}" %>
+      <%= image_tag "clearbits/#{icon}.gif", :class => "icon grey #{color}", :title => "#{I18n.t "site.forums.show.no_recent_activity"}"+"#{post}" %>
     <% end %>
   </td>
   <td class="c2">
-    <%= "Sticky"[:sticky_title]+": <strong>" if topic.sticky? %>
+    <%= "#{I18n.t "site.forums.show.stick"}"+": <strong>" if topic.sticky? %>
     <%= topic_title_link (topic), :class => "entry-title", :rel => "bookmark" %>
     <%#= link_to h(topic.title), topic_path(@forum, topic), :class => "entry-title", :rel => "bookmark" %>
     <%= "</strong>" if topic.sticky? %>
     <% if topic.paged? -%>
-    <small><%= link_to 'last'[], topic_path(:forum_id => @forum, :id => topic, :page => topic.last_page) %></small>
+    <small><%= link_to "#{I18n.t "site.general.last"}", topic_path(:forum_id => @forum, :id => topic, :page => topic.last_page) %></small>
     <% end -%>
   </td>
   <td class="ca inv stat"><%= topic.posts.size %></td>
   <td class="ca inv stat"><%= number_with_delimiter(topic.views) %></td>
   <td class="lp">
     <abbr class="updated" title="<%= topic.replied_at.xmlschema %>"><%= time_ago_in_words(topic.replied_at) %></abbr>
-    <%= 'by {user}'[:by_user, "<span class=\"author\"><strong class=\"fn\">#{h(topic.replied_by_user.display_name)}</strong></span>"] %>
-    <span><%= link_to 'view'[], topic_path(:forum_id => @forum, :id => topic, :page => topic.last_page, :anchor => "posts-#{topic.last_post_id}") %></span>
+    <%= "#{I18n.t "site.general.by_user"}" + " " + "<span class=\"author\"><strong class=\"fn\">#{h(topic.replied_by_user.display_name)}</strong></span>" %>
+    <span><%= link_to (I18n.t "site.general.view").to_s, topic_path(:forum_id => @forum, :id => topic, :page => topic.last_page, :anchor => "posts-#{topic.last_post_id}") %></span>
   </td>
 </tr>
 <% end %>
 </table>
-
-<%= next_page @topics %>
-<%= pagination @topics %>
+%>
+<%= next_page(@topics) %>
+<%= pagination(@topics) %>
 
 <% if logged_in? %>
-<p><%= link_to 'New topic'[:new_topic], new_topic_path(@forum), :class => "utility" %></p>
+<p><%= link_to (I18n.t "site.forums.show.new_topic").to_s, new_topic_path(@forum), :class => "utility" %></p>
 <% end%>

@@ -1,0 +1,348 @@
+pt-BR: 
+  # formatos de data e hora
+  date: 
+    formats: 
+      default: "%d/%m/%Y"
+      short: "%d de %B"
+      long: "%d de %B de %Y"
+      only_day: "%d"
+    
+    day_names: [Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
+    abbr_day_names: [Dom, Seg, Ter, Qua, Qui, Sex, Sáb]
+    month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
+    abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+    order: [:day,:month,:year]
+  
+  time: 
+    formats: 
+      default: "%A, %d de %B de %Y, %H:%M hs"
+      time: "%H:%M hs"
+      short: "%d/%m, %H:%M hs"
+      long: "%A, %d de %B de %Y, %H:%M hs"
+      only_second: "%S"
+      datetime: 
+        formats: 
+          default: "%Y-%m-%dT%H:%M:%S%Z"
+    am: ''
+    pm: ''
+  
+  # date helper distanci em palavras
+  datetime: 
+    distance_in_words: 
+      half_a_minute: 'meio minuto'
+      less_than_x_seconds:  
+        one: 'menos de 1 segundo'
+        other: 'menos de count segundos'
+      
+      x_seconds:  
+        one: '1 segundo'
+        other: 'count segundos'
+      
+      less_than_x_minutes:  
+        one: 'menos de um minuto'
+        other: 'menos de count minutos'
+      
+      x_minutes:  
+        one: '1 minuto'
+        other: 'count minutos'
+      
+      about_x_hours:  
+        one: 'aproximadamente 1 hora'
+        other: 'aproximadamente count horas'
+      
+      x_days:  
+        one: '1 dia'
+        other: 'count dias'
+      
+      about_x_months:  
+        one: 'aproximadamente 1 mês'
+        other: 'aproximadamente count meses'
+      
+      x_months:  
+        one: '1 mês'
+        other: 'count meses'
+      
+      about_x_years:  
+        one: 'aproximadamente 1 ano'
+        other: 'aproximadamente count anos'
+      
+      over_x_years:  
+        one: 'mais de 1 ano'
+        other: 'mais de count anos'
+  
+  # numeros
+  number: 
+    format: 
+      precision: 3
+      separator: ','
+      delimiter: '.'
+    currency: 
+      format: 
+        unit: 'R$'
+        precision: 2
+        format: '%u %n'
+        separator: ','
+        delimiter: '.'
+    percentage: 
+      format: 
+        delimiter: '.'
+    precision: 
+      format: 
+        delimiter: '.'
+    human: 
+      format: 
+        precision: 1
+        delimiter: '.'
+  support: 
+    array: 
+      sentence_connector: "e"
+      skip_last_comma: true              
+    
+  # Active Record
+  activerecord: 
+    errors: 
+      template: 
+        header: 
+          one: "model não pôde ser salvo: 1 erro"
+          other: "model não pôde ser salvo: count erros."
+        body: "Por favor, cheque os seguintes campos:"
+      messages: 
+        inclusion: "não está incluso na lista"
+        exclusion: "não está disponível"
+        invalid: "não é válido"
+        confirmation: "não bate com a confirmação"
+        accepted: "precisa ser aceito"
+        empty: "não pode ser vazio"
+        blank: "não pode ser vazio"
+        too_long: "é muito longo (não mais do que count caracteres)"
+        too_short: "é muito curto (não menos do que count caracteres)"
+        wrong_length: "não é do tamanho correto (precisa ter count caracteres)"
+        taken: "não está disponível"
+        not_a_number: "não é um número"
+        greater_than: "precisa ser maior do que count"
+        greater_than_or_equal_to: "precisa ser maior ou igual a count"
+        equal_to: "precisa ser igual a count"
+        less_than: "precisa ser menor do que count"
+        less_than_or_equal_to: "precisa ser menor ou igual a count"
+        odd: "precisa ser ímpar"
+        even: "precisa ser par"
+  site:
+    menu:
+      menu01: "Inicio"
+      descricaomenu01: "Página Inicial"
+      menu02: "Blogs"
+      descricaomenu02: "Detalhes"
+      menu03: "Forum"
+      descricaomenu03: "Nossos Produtos"
+      menu04: "Help Desk"
+      descricaomenu04: "Peça Ajuda"
+      menu05: "Sobre"
+      descricaomenu05: "Plano Bê"
+    products-inner:
+      descricaoproduto01: "Sistema de Gestão de Manutenção"
+      descricaoproduto02: "Soluções para Planos de Saúde"
+      descricaoproduto03: "Plataforma de Desenvolvimento para POS"
+    footer:
+      paragrafo01: "Os nomes e logomarcas WALK, WALKWEB, WALKSERVER, POSXML e Plano Bê são marcas registradas da Plano Bê Desenvolvimento de Sistemas Ltda."
+      paragrafo02: "Todos os textos e design são de direito autoral de ©2005-2009 Plano Bê, LTDA."
+      paragrafo03: "Todos os direitos reservados."
+    index:
+      banner-logo-inner:
+        titulo01: "Conheça a Plataforma WALK"
+        subtitulo01: "A revolução na forma de se programar um terminal POS"
+      banner-phrase-inner:
+        link01: "Plataforma"
+        link02: "Mercados"
+        link03: "Comprar"
+        link04: "Guias"
+        link05: "Motivações"
+        link06: "Overview"
+      features-inner:
+        tabela01:
+          titulo01: "Compatibilidade"
+          mensagem01: "Obtenha compatibilidade de sua aplicação com vários modelos de terminais."
+        tabela02:
+          titulo01: "Praticidade"
+          mensagem01: "A plataforma WALK possibilita a qualquer pessoa desenvolver aplicações, pois é rápida e intuitiva."
+        tabela03:
+          titulo01: "Velocidade"
+          mensagem01: "A plataforma de desenvolvimento para terminais POS mais rápida do mercado."  
+        tabela04:
+          titulo01: "Acessibilidade"
+          mensagem01: "Ampla e detalhada documentação, fórum de discussões, Screen Casts e aplicações de exemplo."
+        tabela05:
+          titulo01: "Segurança"
+          mensagem01: "Utilização de sofisticados métodos de criptografia, tanto na captura quanto na transmissão de dados."
+        tabela06:
+          titulo01: "Qualidade"
+          mensagem01: "Construa aplicações robustas que utilizam a máxima performance do terminal."
+      content:
+        about:
+          subtitulo01: "Sobre a Plano Bê"
+          texto01: "''Criatividade, Qualidade, Criatividade, Inovação, Criatividade, Integridade, Criatividade, Envolvimento''"
+          texto02: "Reportagem realizada por uma emissora de TV em 2008 e exibida em rede nacional, falando sobre a Plano Bê, e seu modo diferente de trabalho."
+        contact:
+          subtitulo01: "Entre em contato"
+          texto01: "Se você tem alguma dúvida sobre um de nossos produtos ou precisa de mais informações, entre em contato conosco. Teremos prazer em atendê-lo."
+          texto02: "» Rua Jovita de Melo nº 850, Franca/SP - Brasil"
+          texto03: "» CEP: 14401-311"
+          texto04: "» Telefone: +55 (16) 3722-3154"
+        jobs:
+          subtitulo01: "Trabalhe conosco"
+          texto01: "Você tem paixão e a vontade de criar excelentes aplicações? Se você está à procura de desafios, inspiração e excelência, então esta é a empresa certa para você!"
+          texto02: "Se você compartilha de nossos objetivos e possui as competências necessárias, queremos ouvi-lo!"
+    walk:
+      titulo01: "Sistema WALK"
+      subtitulo01: "Overview"
+      paragrafo01: "Desenvolver aplicações para terminais POS já é mais fácil do que se possa imaginar. A poderosa ferramenta de criação, compilação e gerenciamento de aplicativos desenvolvida pela Plano Bê amplia a cadeia de valores de um terminal POS e impulsiona o mercado para novas modalidades de negócios, gerando mais oportunidades com soluções cada vez mais inteligentes e robustas."
+      paragrafo02: "Foi em um cenário de inúmeras barreiras de mercado encontradas num setor de plena expansão no Brasil, a indústria de transações eletrônicas em especial quando se tratava de terminais P.O.S. (Point Of Sale), que a equipe de programadores da Plano Bê decidiu desenvolver uma ferramenta que pudesse suprir, senão em todo, pelo menos boa parte dessas barreiras e dificuldades mercadológicas. Investiram no desenvolvimento de uma ferramenta que, mais tarde, passou a ser considerada um novo conceito de sofisticação aliada à simplicidade e flexibilidade no desenvolvimento de aplicações para terminais POS."
+      paragrafo03: "Batizado de Sistema WALK, nascia o conceito de uma nova plataforma de programação, robusta, completa, porém simples e flexível, dando agilidade, segurança e gerando novas oportunidades de negócios."
+      paragrafo04: "Desde então, o Sistema WALK formado por um conjunto de 4 módulos (WALK Framework, WALK Server, WALK Compiler e WALK Web), tem sido destaque no mercado de soluções voltadas ao mercado de captura de transações eletrônicas com o uso de terminais POS."
+      subtitulo02: "Plataforma" 
+      paragrafo05: "A sustentação sobre a qual vem sendo desenvolvida a tecnologia do WALK System, tem como abordagem principal a garantia da qualidade de serviços de rede, minimização de custos e maior abrangência e ampliação da cadeia de valor de um terminal de captura."
+      paragrafo06: "A tecnologia empregada nas ferramentas, garante agilidade no desenvolvimento de novas aplicações, rapidez nas implementações de funcionalidades, maior controle logístico das atualizações de operações de terminais em campo, bem como a redução de custos operacionais e de desenvolvimento."
+      paragrafo07: "A plataforma WALK não se limita apenas às administradoras ou processadoras de cartão crédito ou débito, mas se adere a qualquer segmento de mercado que possa vir a ter a necessidade de coleta de dados em campo."
+      lista01: "Administradoras/Processadoras de Cartões;"
+      lista02: "Redes de captura;"
+      lista03: "Desenvolvedores de Softwares;"
+      lista04: "Redes de força de Vendas;"
+      lista05: "Operadoras de Planos de Saúde;"
+      lista06: "Operadores Logísticos;"
+      lista07: "Universidades e Faculdades;"
+      lista08: "Empresas de arrecadação e cobrança;"
+      lista09: "Prestadoras de serviço Público (água, energia, gás, etc);"
+      lista10: "Entre outros diversos segmentos de mercado."
+      paragrafo08: "A capacidade em se atender diversos segmentos do mercado, traz benefícios não somente para as organizações em si, mas na maioria dos casos à população em geral, que passa a contar com serviços de maior agilidade e segurança."
+      paragrafo09: "Os serviços que podem ser oferecidos por um terminal de captura POS, ultrapassa o limite da simples operação de venda a débito ou crédito, e novas modalidades de negócios passam a surgir, tais como a recarga de celulares, venda de ingressos eletrônicos, sistema de gestão de delivery inteligente, medição e coleta de informações em campo com os novos modelos de terminais móveis com tecnologia GPRS. As soluções não param por ai, apenas se limitam à criatividade imposta pela necessidade de mercado."
+      subtitulo03: "Mercados"
+      subtitulo04: "POSXML"
+      subtitulo05: "Motivações"
+      paragrafo10: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo justo, placerat eu, cursus sed, varius sit amet, magna. Aliquam erat volutpat. Aliquam erat volutpat. Fusce vel nulla at arcu ornare semper. Quisque id diam. Nulla ullamcorper placerat justo. Etiam tempor molestie mauris. Integer fermentum. Cras quis risus. Sed consectetur tempor lorem. Ut vulputate, ipsum in lobortis pretium, ipsum quam convallis lacus, vel dignissim ante risus ut tellus. Aliquam erat volutpat."
+      paragrafo11: "Morbi posuere lacus quis mi. Maecenas ultricies lobortis mi. Aenean tellus erat, aliquet sed, dignissim vel, luctus ut, velit. Cras commodo nisl vitae purus. Donec libero. Nunc scelerisque molestie dui. In hac habitasse platea dictumst. Ut urna tellus, sagittis at, scelerisque id, imperdiet vitae, turpis. Aenean et ligula. Vivamus a purus. Phasellus a massa."
+      paragrafo12: "Com o crescimento exponencial da indústria de transações eletrônicas e o aparecimento de novas empresas ligadas ao mercado de cartões convênios, private label, frotas, gift cards, e outras modalidades, além da própria evolução da moeda de plástico, como vem sendo chamado os cartões, muitas barreiras tecnológicas surgiram. Tais barreiras serviram de motivação para que a Plano Bê buscasse uma solução adequada para o mercado."
+      paragrafo13: "Upgrade de Versões"
+      paragrafo14: "As opções atuais para atualização do parque de terminais instalados não são muitas, e geralmente complexas e com altos custos. Quase sempre deve ser feita a atualização em campo individualmente ou por intermédio de sistemas de tele-cargas, sendo muitas das vezes um processo dispendioso."
+      paragrafo15: "Com o Sistema WALK, atualizações de aplicações são transparentes, automáticas e não requerem nenhuma ação do operador do terminal. Utiliza a mesma conexão para realizar a transação eletrônica para providenciar a atualização do aplicativo, e assim disponibilizar a nova versão. A partir da disponibilização de uma nova versão no servidor da rede, qualquer terminal que nele esteja instalado o WALK Framework, independente da marca ou modelo, será atualizado automaticamente. Atualizações direcionadas para um grupo, ou para um único terminal também é possível. Isto permite a personalização de aplicações a diferentes segmentos de mercados e/ou atividades."
+      paragrafo16: "Poucas Funções"
+      paragrafo17: "A grande maioria dos terminais dos dias de hoje permitem que se utilize múltiplas aplicações, contudo, um grande número desses terminais instalados executam operações limitadas e não exploram a grande capacidade de processamento ou de vantagens das redes de serviços."
+      paragrafo18: "O Sistema WALK permite que se desenvolva um aplicativo com múltiplos serviços e funções, tornando assim o terminal um servidor de aplicações. O compartilhamento de funções por um mesmo terminal acaba por reduzir custos, por exemplo, da dispensa de vários terminais para aplicações diferentes."
+      paragrafo19: "Desenvolvimento de Aplicações"
+      paragrafo20: "Geralmente o desenvolvimento de soluções destinadas à terminais de captura demandam conhecimentos avançados em linguagens de programação de baixo nível, como C, C++ e outras. Desta forma, o custo para desenvolvimento destas aplicações é alto e quase sempre o tempo de desenvolvimento é maior, pois a oferta do número de profissionais com tais conhecimentos é bem menor do que os desenvolvedores de soluções em linguagens mais conhecidas como MS Visual BasicTM ou Borland DelphiTM."
+      paragrafo21: "Na intenção de facilitar o desenvolvimento de aplicações destinadas à terminais de captura, o Sistema WALK conta com uma linguagem proprietária, denominada POSXML, que permite à pessoas com o mínimo conhecimento em programação poderem desenvolver, implementar e modificar suas aplicações, sem a necessidade de conhecimento de WAP, WML e ou qualquer outra linguagem específica. O Sistema WALK pode ser considerado o que há de mais fácil em desenvolvimento de aplicações de terminais POS. O desenvolvimento de aplicações se torna mais rápido e os custos são mínimos, pois não há a necessidade de treinamentos complexos ou conhecimento profundo de programação."
+      paragrafo22: "Compatibilidade"
+      paragrafo23: "Certamente a compatibilidade de aplicações desenvolvidas para terminais é outro grande problema no mercado da indústria de transações eletrônicas, pois os terminais de diferentes fabricantes possuem sistema operacional e plataformas únicas e proprietárias."
+      paragrafo24: "O WALK Framework está preparado e homologado para diferentes marcas e modelos de terminais, de diferentes fabricantes e que possuem dispositivos de comunicação diferentes, tais como GPRS, ETHERNET, DIAL e WI-FI. Além das marcas e modelos já homologados, outras variações de outros fabricantes podem ser também homologados, logo, o WALK Framework pode ser 'portado'. Uma aplicação desenvolvida com o Sistema WALK, através do POSXML é 100% compatível com todos os terminais homologados, dispensando adaptações ou implementações direcionadas."
+      paragrafo25: "Limitação de Valores"
+      paragrafo26: "Atualmente, devido aos problemas que impedem a criação e desenvolvimento de novas aplicações, tais como custos elevados e tempo extenso de programação, tem sido limitado os valores reais de serviços e aplicações para estes equipamentos, consequentemente a toda indústria de transações eletrônicas."
+      paragrafo27: "Limitação de valores ou a incapacidade de diversificação de serviços que podem ser oferecidos por um terminal agora não existe mais com o uso do Sistema WALK. Novas aplicações, novos mercados, novos segmentos podem ser beneficiados com o uso de terminais eletrônicos de captura, aumentando ainda mais a cadeia de valor para o mercado da indústria de transações eletrônicas."
+      paragrafo28: "Voltar ao Topo"
+      paragrafo29: "Barreira"
+      paragrafo30: "Solução"
+    about:
+      titulo01: "Sobre nós"
+      subtitulo01: "Valores"
+      lista01: "Criatividade"
+      lista02: "Qualidade"
+      lista03: "Criatividade"
+      lista04: "Inovação"
+      lista05: "Criatividade"
+      lista06: "Integridade"
+      lista07: "Criatividade"
+      lista08: "Envolvimento"
+      subtitulo02: "Missão"
+      paragrafo02: "Criar softwares CRIATIVOS e INOVADORES."
+      subtitulo03: "Visão"
+      paragrafo03: "Ser a melhor empresa de desenvolvimento de software criativos e inovadores do mundo, onde as pessoas tenham orgulho e prazer em trabalhar, gerando o máximo de lucro para nossos investidores e clientes."
+      paragrafo04: "Fundada em 2005 na cidade de Franca, São Paulo, empresa de tecnologia e desenvolvimento de sistemas, atuando no mercado de transações eletrônicas e soluções gerenciais integradas, a Plano Bê busca alinhar sua capacidade de inovação tecnológica ao seu compromisso do bom atendimento e relacionamento com seus clientes e parceiros."
+      paragrafo05: "A Plano Bê adota em seus planejamento empresarial, uma politica de qualidade rigorosa, que visa em primeiro lugar buscar a satisfação plena de seus clientes, levando soluções formadas por produtos e serviços elaborados e projetados para que se encaixem perfeitamente às suas necessidades. Temos o compromisso de transferir constantemente os avanços tecnológicos para nossos produtos e serviços e a busca na melhoria constante da eficácia de nossa gestão de qualidade, visando atingir a satisfação total de nossos clientes."
+      staff:
+        person01:
+          name: "Eliézer Pimentel"
+          role: "Diretor Comercial"
+          paragrafo01: "Formado em Administração de Empresas pela UNI-FACEF, analista-programador Delphi, estudando Ruby e Rails."
+          paragrafo02: "Iniciou as atividades profissionais como programador de computadores no início dos anos 1990 programando profissionalmente com Basic, QuickBasic, COBOL e há 8 anos com Delphi."
+          paragrafo03: "Em meados de 2005, se uniu à Luis Gustavo e fundaram a Plano Bê, com a intenção de criar uma empresa de softwares criativos e inovadores com características próprias, forte, cujos valores e missão pudessem refletir sua identidade."
+          blog: "Blog Pessoal:"
+          other: "Twitter:"
+        person02:
+          name: "Luis Gustavo"
+          role: "Lorem Ipsum"
+          paragrafo01: "Lorem ipsum dolor sit amet, varius sit amet, magna. Aliquam erat volutpat. Aliquam erat volutpat. Fusce vel nulla at arcu ornare semper. Quisque id diam."
+          paragrafo02: "Morbi posuere lacus quis mi. Maecenas ultricies lobortis mi. Aenean tellus erat, aliquet sed, dignissim vel, luctus ut, velit. Cras commodo nisl vitae purus. Donec libero. Nunc scelerisque molestie dui."
+          paragrafo03: "Nunc leo justo, placerat eu, cursus sed, varius sit amet, magna. Aliquam erat volutpat. Aliquam erat volutpat. Fusce vel nulla at arcu ornare semper. Quisque id diam."
+          blog: "Blog Pessoal:"
+          other: "Twitter:"
+        person03:
+          name: "Jean Orlando"
+          role: "Analista de Sistemas"
+          paragrafo01: "Analista/Programador de sistemas Web em ASP.NET, e estudante de Ruby/Rails."
+          paragrafo02: "Iniciou as atividades profissionais como Web Designer em 2001, e logo começou a programar em ASP, e ASP.NET ainda no beta, no qual se especializou e projetou/desenvolveu diversos sistemas críticos nesta plataforma para diversos segmentos."
+          paragrafo03: "Em 2005, entrou para o time da Plano Bê para desenvolver a parte de produtos Web da empresa, que estão em plena produção em várias empresas, inclusive multinacionais."
+          paragrafo04: "Adorador de tecnologia, games e eletrônicos, procura estar sempre antenado nas últimas novidades do mercado, para conhecer o que há de novo e ajudar a criar o que ainda não existe."
+          blog: "Blog Pessoal:"
+          other: "Twitter:"
+        person04:
+          name: "Gabriela Gomide"
+          role: "Analista de Sistemas"
+          paragrafo01: "Gabriela é Formada em Sistemas de Informação pela Universidade de Franca - UNIFRAN, e atualmente está fazendo Pós Graduação - MBA em Tecnologia da Informação pela Uni-Facef."
+          paragrafo02: "Programadora Web em .Net, com foco em ASP.Net e estudante de Ruby/Rails."
+          paragrafo03: "Iniciou suas atividades profissionais em 2005 no meio acadêmico, como suporte ao centro de informática da Universidade. Em 2007 iniciou sua carreira no meio de desenvolvimento de softwares, já com ASP.NET."
+          paragrafo04: "Em 2007 entrou para a equipe da Plano Bê para auxiliar no suporte dos softwares e desenvolvimento dos mesmos. Em 2008 atua totalmente como programadora dos sistemas que hoje estão em produção em diversas empresas."
+          paragrafo05: "Busca sempre estar em contato com novas tecnologias e aprender novos conceitos e técnicas para se atualizar."
+          blog: "Blog Pessoal:"
+          other: "Twitter:"
+        person05:
+          name: "Danilo Matias"
+          role: "Analista de Sistemas"
+          paragrafo01: "Responsável pela homologação dos terminais e implementações de novas funcionalidades do framework WALk, eficiência e compromisso são algumas das principais características desse fantástico profissional."
+          paragrafo02: "Tendo começado na área  de TI em 2000, suas principais influências em tecnologia são grandes empresas como Google e Activision. Danilo é o analista que nas horas vagas também manda muito bem nos games e em suas atuações no futebol de fim de semana, ele também é um bom apreciador de rock e culturas orientais."
+          paragrafo03: "Sua principal motivação é saber que seu excelente trabalho é preciado por pessoas em diversas partes do mundo."
+          blog: "Blog Pessoal:"
+          other: "Twitter:"
+        person06:
+          name: "Thales Berdu"
+          role: "Analista de Sistemas"
+          paragrafo01: "Thales Berdu, está atualmente cursando o 4º e último Ano de Administração de Empresas na UNI-FACEF  (Faculdade de Administração , Contabilidade e Econômia de Franca), também pretende se formar em Econômia."
+          paragrafo02: "Fala fluentemente Inglês, Francês e pretende aprender mais línguas, pois esse é um hooby que tem."
+          paragrafo03: "Em 2006 além da faculdade e de seu trabalho, começou a fazer um curso técnico em informática, onde  descobriu uma de suas paixões. Logo teve seu primeiro contato com Programação: VB, Delphi, HTML, CSS."
+          paragrafo04: "Em 2008 entrou para a equipe da Plano Bê para auxiliar no suporte dos softwares e desenvolvimento dos mesmos."
+          paragrafo05: "Procura sempre estar por dentro das últimas novidades do mercado, tanto em computação, quanto em games, tecnologia, eletrônicos, etc."
+          blog: "Blog Pessoal:"
+          other: "Twitter:"
+        person07:
+          name: "Thiago Lelis"
+          role: "Analista de Sistemas"
+          paragrafo01: "Thiago mais conhecido como Thiagão, é atualmente desenvolvedor web utilizando Ruby on Rails, bacharel em sistemas de informação e entusiasta de boas praticas e métodos agéis, começou a desenvolver software utilizando Visual Basic e até conhecer Rails utilizava ASP.NET."
+          paragrafo02: "Conheceu o framework rails em meados de 2008 e se apaixonou já nas primeiras linhas de código. Paixão esta que aumenta a cada nova linha escrita."
+          paragrafo03: "Nas horas vagas gosta de jogar basquete e games, principalmente MMORPG, e é claro nos finais de semana tomar aquela cerveja bem gelada."
+          blog: "Blog Pessoal:"
+          other: "Twitter:"
+        person08:
+          name: "Bruno Freitas"
+          role: "Analista de Sistemas"
+          paragrafo01: "Bruno Freitas é o mais novo integrante do Core Team da Plano Bê. É analista de sistemas com 6 anos de experiência profissional com tecnologias como classic VB e ASP, ASP.NET, Java, e recentemente estudando Ruby."
+          paragrafo02: "Apaixonado por informática, está frequentemente buscando novos conhecimentos. Motivado a desafios, já participou do desenvolvimento de sistemas críticos e de alta disponibilidade. Possui experiência com desenvolvimento nas plataformas Windows, Web e UNIX, além de ser um adorador de Banco de Dados."
+          paragrafo03: "Antes de ingressar na Plano Bê, Bruno trabalhou em projetos de EDI e Logística de uma das maiores redes varejistas no Brasil, participou de projetos relacionados a cartão de crédito em uma das gigantes de TI no cenário mundial, e como consultor de TI contribuiu ativamente em projetos de integração de software de duas das maiores instituições financeiras do Braisl."
+          paragrafo04: "Minuncioso e detalhista, Bruno é consumidor e fã de produtos Apple. Fora da mundo binário, Bruno gosta de ler, ouvir boa música, sair com os amigos e estudar biologia, que é sua segunda paixão."
+          blog: "Blog Pessoal:"
+          other: "Twitter:"
+    rubyonrails:
+      titulo01: "A Plano Bê e a comunidade Ruby On Rails"
+      paragrafo01: "A Plano Bê apoia a comunidade Ruby On Rails no Brasil que sem dúvida alguma é a plataforma de desenvolvimento para aplicações web que mais cresceu lá fora nos últimos anos e de longe tem as pessoas mais apaixonadas."
+      paragrafo02: "Estamos no mercado de desenvolvimento há alguns anos, e sempre trabalhamos sobre plataformas Microsoft. Sempre tivemos como objetivo entregar o software para o cliente no menor tempo possivel e com a cara dele, sendo simples, rápido e prático."
+      paragrafo03: "Há pouco tempo atrás decidimos melhorar a qualidade de nossos produtos e buscar uma metodologia de desenvolvimento que fosse a nossa cara. Encontramos as metodologias ágeis de desenvolvimento de software e ouvimos falar de Ruby e de um framework web chamado Ruby On Rails. Num primeiro momento não demos muita atenção mais ao aprofundarmos mais um pouco na comunidade, nunca haviamos conhecido antes, pessoas tão empolgadas, criativas, apaixonadas e pró-ativas em relação a profissão. Profissionais que encaram o trabalho como arte, ficando visivel a qualidade de seus trabalhos em cada esforço junto a comunidade. Nos apaixonamos pela comunidade e pela ferramenta. Uma quebra de paradigma que estávamos esperando."
+      paragrafo04: "Nossa missão como empresa é criar softwares criativos e inovadores. Nossos valores são criatividade, qualidade, criatividade, inovação, criatividade, integridade, criatividade e envolvimento. Alguém percebeu que tudo que citei, está fortemente presente e estampado na comunidade Ruby e Rails ao redor do mundo ? Quando definimos nossos valores e missão nem conheciamos Ruby e Rails."
+      paragrafo05: "Acabávamos de encontrar a peça que faltava no nosso quebra cabeça: a comunidade Ruby e Rails. Como diria Matz, criador do Ruby, tudo se resume e é relacionado basicamento ao amor. Amor pelo o que você faz e pelo trabalho que executa. E a maioria da comunidade, para não dizer todos, são realmente apaixonados."
+      paragrafo06: "Apoiando a comunidade Ruby on Rails, nossa intenção é fortalecer e unir essas pessoas que são realmente apaixonadas pelo o que fazem, são criativas e apresentam um trabalho da mais alta qualidade. Temos projetos e várias idéias e nosso objetivo é mostrar ao Brasil e ao mundo que somos muito mais que meros 'programadores' ou 'fabricante de softwares'; somos pessoas criativas e mudaremos o modo como as pessoas veem o software brasileiro no mundo."
+      paragrafo07: "O futuro é nosso, porque tudo basicamente se resume a amor e paixão, e a comunidade Ruby e Rails brasileira é apaixonada!"
+    comprar:
+      titulo01: "Comprar"
+      paragrafo01: "Você gostaria de adquirir o WALK? Tem alguma dúvida sobre o produto ou precisa de mais informações? Entre em contato conosco, que teremos prazer em atendê-lo."
+      paragrafo02: "Informações de Contato"
+      paragrafo03: "Endereço"
+      paragrafo04: "Telefone"
+    shared:
+      error500: "Desculpe, mas alguma coisa errada aconteceu. Nos avise que iremos corrigir."
+      error404: "Desculpe, mas a página que você estava procurando não foi encontrada."
+      under_construction: "Desculpe, mas ainda não terminamos de fazer isso. Volte mais tarde."
+      

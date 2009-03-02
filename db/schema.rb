@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(:version => 53) do
     t.integer  "user_id"
   end
 
-  add_index "sessions", ["session_id"], :name => "sessions_session_id_index"
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
 
   create_table "topics", :force => true do |t|
     t.integer  "forum_id"

@@ -27,14 +27,14 @@
 <p class="disclaim">
 <strong>
   <%
-  footers=["Two's company. Three's a forum. More's a Beast."[:footer_message]
+  footers=[I18n.t "site.layouts.application.text1"
   ]
   %>
   <%= footers[rand(footers.size)]%>
   </strong>
 </p>
 <p class="credit">
-  <%= 'Powered by'[:powered_by] %> <a href="http://beast.caboo.se/">Beast</a><br />
+  <%= I18n.t "site.layouts.application.text2" %> <a href="http://beast.caboo.se/">Beast</a><br />
   &copy; 2006 <a href="http://www.workingwithrails.com/person/5337-josh-goebel" class="subtle">Josh Goebel</a> <%= 'and'[:and] %> <a href="http://weblog.techno-weenie.net" class="subtle">Rick Olson</a>
 </p>
 <br style="clear:both;" />

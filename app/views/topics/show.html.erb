@@ -3,7 +3,7 @@
 
 <% content_for :right do -%>
 
-<h5><%= 'Voices'[:voices_title] %></h5>
+<h5><%= I18n.t "site.topics.show.voices_title" %></h5>
 <ul class="flat talking">
 <% @topic.voices.each do | user | %>
   <li><%= link_to h(user.display_name), user_path(user) %></li>
@@ -19,7 +19,7 @@
 <div>
   <input id="monitor_checkbox" type="checkbox" <%= "checked='checked'" if @monitoring %> 
     onclick="if (this.checked) {<%= remote_function :url => monitorship_path(@forum, @topic) %>} else {<%= remote_function :url => monitorship_path(@forum, @topic), :method => :delete %>}" />
-  <label id="monitor_label" for="monitor_checkbox"><%= @monitoring ? 'Monitoring topic'[] : 'Monitor topic'[] %></label>
+  <label id="monitor_label" for="monitor_checkbox"><%= @monitoring ? "#{I18n.t "site.topics.show.monitoring_topic"}" : "#{I18n.t "site.topics.show.monitoring_topic"}" %></label>
   <%= hidden_field_tag '_method', 'delete' if @monitoring %>
   <%= submit_tag :Set, :id => 'monitor_submit' %>
 </div>
@@ -29,13 +29,13 @@
 
 
 <div class="crumbs">
-  <%= link_to "Forums"[:forums_title], home_path %> <span class="arrow">&rarr;</span>
+  <%= link_to "#{I18n.t "site.general.tile_plural"}", home_path %> <span class="arrow">&rarr;</span>
   <%= link_to h(@topic.forum.name), forum_path(@topic.forum) %> 
   <% 
   page=session[:forum_page] ? session[:forum_page][@topic.forum.id] : nil
   if page and page!=1 %>
   <small style="color:#ccc">
-  (<%= link_to 'page {page}'[:page, page], forum_path(:id => @topic.forum, :page => page) %>)
+  (<%= link_to "#{(I18n.t "site.general.page") + " " + page.to_s }" , forum_path(:id => @topic.forum, :page => page) %>)
   </small>
   <% end %>
   <span class="arrow">&rarr;</span>
@@ -46,13 +46,13 @@
 
   <%= h @topic.title %>
   <% if @topic.locked? %>
-  <span>(<%= 'locked'[] %>)</span>
+  <span>(<%= I18n.t "site.general.locked" %>)</span>
   <% end %>
   <% if logged_in? %>
     <span style="display:none;" id="topic_mod">
       <% if @topic.editable_by?(current_user) -%>
-        <%= link_to('edit'[], edit_topic_path(@forum, @topic), :class => "utility") %> |
-        <%= link_to('delete'[], topic_path(@forum, @topic), :class => "utility", :method => :delete, :confirm => 'Delete this topic forever?'[:delete_topic_conf]) %>
+        <%= link_to("#{I18n.t "site.general.edit"}", edit_topic_path(@forum, @topic), :class => "utility") %>
+        <%= link_to("#{I18n.t "site.general.delete"}", topic_path(@forum, @topic), :class => "utility", :method => :delete, :confirm => "#{I18n.t "site.topics.show.delete_topic_conf"}") %>
       <% end -%>
     </span>
   <% end %>
@@ -60,8 +60,8 @@
 
 <p class="subtitle">
   <%= feed_icon_tag @topic.title, formatted_topic_path(@forum, @topic, :rss) %>
-  <%= '{count} post(s)'[(count=@topic.posts.size)==1 ? :post_count : :posts_count, number_with_delimiter(count)] %>, 
-  <%= '{count} voice(s)'[(count=@topic.voices.size)==1 ? :voice_count : :voices_count, number_with_delimiter(count)] %>
+  <%= number_with_delimiter(@topic.posts.size) + " " + (I18n.t "site.general.posts").to_s %>, 
+  <%= number_with_delimiter(@topic.voices.size) + " " + (I18n.t "site.general.voices").to_s %>
 </p>
 
 <%= pagination @posts %>
@@ -92,20 +92,20 @@
     <% if post.user.admin? or post.forum.moderators.include?(post.user) %>
     <span class="admin">
       <% if post.user.admin? %>
-      <%= 'Administator'[:administrator_title] %>
+      <%= I18n.t "site.general.administrator_title" %>
       <% elsif post.forum.moderators.include?(post.user) %>
-      <%= 'Moderator'[:moderator_title] %>
+      <%= I18n.t "site.general.moderator_title" %>
       <% end %>
     </span>
     <% end %>
-    <span class="posts"><%= '{count} post(s)'[(count=post.user.posts.size)==1 ? :post_count : :posts_count, number_with_delimiter(count)] %></span>
+    <span class="posts"><%=  number_with_delimiter(post.user.posts.size) + " " + (I18n.t "site.general.posts").to_s %></span>
 
 
     <% if logged_in? && post.editable_by?(current_user) -%>
     <p>
       <span class="edit">
         <%= ajax_spinner_for "edit-post-#{post.id}", "spinner_bounce.gif" %>
-        <%= link_to_remote('Edit post'[], 
+        <%= link_to_remote("#{I18n.t "site.topics.show.edit_post"}", 
               {:url => edit_post_path(:forum_id => @forum, :topic_id => @topic, :id => post), :method => :get,
                :before => "EditForm.init(#{post.id});", :condition => "!EditForm.isEditing(#{post.id})" }, 
               {:href => edit_post_path(:forum_id => @forum, :topic_id => @topic, :id => post, :page => params[:page]), :class => "utility"}) %>
@@ -133,13 +133,13 @@
 <div id="edit"></div>
 <% if @topic.locked? %>
 <p>
-    <%= image_tag "clearbits/lock.gif", :class => "icon grey", :title => "Topic locked"[:topic_locked_title] %> 
+    <%= image_tag "clearbits/lock.gif", :class => "icon grey", :title => "#{I18n.t "site.topics.show.topic_locked_title"}" %> 
     <label>
-    <%= 'This topic is locked'[:locked_topic] %>.</label>
+    <%= I18n.t "site.topics.show.locked_topic" %>.</label>
 </p>
 <% else %>
 
-<p><%= link_to_function 'Reply to topic'[], "ReplyForm.init()", :class => "utility" %></p>
+<p><%= link_to_function "#{I18n.t "site.topics.show.reply_to_topic"}", "ReplyForm.init()", :class => "utility" %></p>
 
 <div id="reply" class="editbox">
 <div class="container">
@@ -153,23 +153,23 @@
       <td valign="top">
 
 
-        <h5><%= 'Formatting Help'[] %></h5>
+        <h5><%= (I18n.t "site.topics.show.formatting_help").to_s %></h5>
 
         <ul class="help">
-          <li><%= '*bold*'[:formatting_bold] %>
+          <li><%= I18n.t "site.general.formatting_bold" %>
           &nbsp; &nbsp; &nbsp;
-          <%= '_italics_'[:formatting_italics] %>
+          <%= I18n.t "site.general.formatting_italics" %>
           &nbsp; &nbsp; &nbsp;<br />
-          <%= 'bq. <span>(quotes)</span>'[:formatting_blockquote] %></li>
+          <%= I18n.t "site.general.formatting_blockquote" %></li>
           <li>"IBM":http://www.ibm.com</li>
-          <li><%= '* or # <span>(lists)</span>'[:formatting_list] %></li>
+          <li><%= I18n.t "site.general.formatting_list" %></li>
         </ul>
 
       </td>
     </tr>
     <tr>
       <td valign="bottom" style="padding-bottom:15px;">
-       <%= submit_tag "Save Reply"[] %><span class="button_or">or <%= link_to_function 'cancel'[], "$('reply').hide()" %></span>
+       <%= submit_tag (I18n.t "site.topics.show.save_reply").to_s %><span class="button_or">or <%= link_to_function (I18n.t "site.general.cancel").to_s, "$('reply').hide()" %></span>
      </td>
    </tr>
   </table>
@@ -181,6 +181,6 @@
 <% end %>
 
 <div class="crumbs" style="margin-top:1.1em;">
-  <%= link_to "Forums"[:forums_title], home_path %> <span class="arrow">&rarr;</span>
+  <%= link_to (I18n.t "site.general.tile_plural").to_s, home_path %> <span class="arrow">&rarr;</span>
   <%= link_to h(@topic.forum.name), forum_path(@topic.forum) %> <span class="arrow">&rarr;</span>
 </div>

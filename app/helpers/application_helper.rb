@@ -25,9 +25,9 @@ module ApplicationHelper
   end
 
   def search_posts_title
-    returning(params[:q].blank? ? 'Recent Posts'[] : "Searching for"[] + " '#{h params[:q]}'") do |title|
-      title << " "+'by {user}'[:by_user,h(User.find(params[:user_id]).display_name)] if params[:user_id]
-      title << " "+'in {forum}'[:in_forum,h(Forum.find(params[:forum_id]).name)] if params[:forum_id]
+    returning(params[:q].blank? ? (I18n.t "site.general.recent_post").to_s : (I18n.t "site.general.searching_for").to_s + " '#{h params[:q]}'") do |title|
+      title << " "+ (I18n.t "site.general.by_user").to_s + " " + h(User.find(params[:user_id]).display_name) if params[:user_id]
+      title << " "+(I18n.t "site.general.in_forum").to_s + " " + h(Forum.find(params[:forum_id]).name) if params[:forum_id]
     end
   end
 
@@ -60,13 +60,13 @@ module ApplicationHelper
     distance_in_minutes = (((to_time - from_time).abs)/60).round
   
     case distance_in_minutes
-      when 0..1           then (distance_in_minutes==0) ? 'a few seconds ago'[] : '1 minute ago'[]
-      when 2..59          then "{minutes} minutes ago"[:minutes_ago, distance_in_minutes]
-      when 60..90         then "1 hour ago"[]
-      when 90..1440       then "{hours} hours ago"[:hours_ago, (distance_in_minutes.to_f / 60.0).round]
-      when 1440..2160     then '1 day ago'[] # 1 day to 1.5 days
-      when 2160..2880     then "{days} days ago"[:days_ago, (distance_in_minutes.to_f / 1440.0).round] # 1.5 days to 2 days
-      else from_time.strftime("%b %e, %Y  %l:%M%p"[:datetime_format]).gsub(/([AP]M)/) { |x| x.downcase }
+      when 0..1           then (distance_in_minutes==0) ? (I18n.t "datetime.distance_in_words.less_than_x_minutes.zero").to_s : (I18n.t "datetime.distance_in_words.less_than_x_minutes.one").to_s 
+      when 2..59          then (I18n.t "datetime.distance_in_words.less_than_x_minutes.other", :count => distance_in_minutes ).to_s
+      when 60..90         then (I18n.t "datetime.distance_in_words.about_x_hours.one").to_s
+      when 90..1440       then (I18n.t "datetime.distance_in_words.about_x_hours.other", :count => (distance_in_minutes.to_f / 60.0).round).to_s
+      when 1440..2160     then (I18n.t "datetime.distance_in_words.x_days.one").to_s # 1 day to 1.5 days
+      when 2160..2880     then (I18n.t "datetime.distance_in_words.x_days.other", :count => (distance_in_minutes.to_f / 1440.0).round).to_s # 1.5 days to 2 days
+      else from_time.strftime((I18n.t "time.formats.datetime_format").to_s).gsub(/([AP]M)/) { |x| x.downcase }
     end
   end
   
