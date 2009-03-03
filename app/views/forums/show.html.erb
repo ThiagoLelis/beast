@@ -32,12 +32,12 @@
 <p class="subtitle">
   <%= feed_icon_tag @forum.name, formatted_forum_posts_path(@forum, :rss) %> 
   <%= number_with_delimiter(@forum.topics.size) + " " + "#{I18n.t "site.general.topics"}"  %>,  
-          <%= number_with_delimiter(@forum.posts.size) + " " + "#{I18n.t "site.general.posts"}" %>
+  <%= number_with_delimiter(@forum.posts.size) + " " + "#{I18n.t "site.general.posts"}" %>
 </p>
 
 <% if @topics.total_pages > 1 -%>
 <% if logged_in? %>
-<p style="float:right; margin-top:0;"><%= link_to 'New topic'[], new_topic_path(@forum), :class => "utility" %></p>
+<p style="float:right; margin-top:0;"><%= link_to (I18n.t "site.forums.show.new_topic").to_s, new_topic_path(@forum), :class => "utility" %></p>
 <% end %>
 <%= pagination @topics %>
 <% end -%>
@@ -86,7 +86,6 @@
 </tr>
 <% end %>
 </table>
-%>
 <%= next_page(@topics) %>
 <%= pagination(@topics) %>
 

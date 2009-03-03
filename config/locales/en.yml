@@ -101,7 +101,13 @@
       odd: "must be odd"
       even: "must be even"
 
-  site: 
+  site:
+    helper:
+      application:
+        pages_title: "Pages"         
+        next: "Next"
+        previous: "Previous"
+        next_page: "Next Page"
     general:
       searching_for: Searching for 
       recent_post: "Recent Posts"
@@ -184,12 +190,12 @@
         position: "Position"
         description: "Description"
     posts:
+      feed_language: "en-us"
       edit:
         delete_post: "Delete post"
         delete_post_conf: "Delete this post?  Are you sure?"
       index:
         posts_feed_title: "{{search_posts_title}} | Beast" 
-        feed_language: "en-us"
       monitored:
         users_monitored_topics: "'s Monitored Topics"
         posts_user_is_monitoring: "Posts that {{user}} is monitoring"
@@ -296,6 +302,7 @@
         website_title: "Website"
         user_administrador: "User is an administrator"
         user_since: "User since"
+        add_moderator: "Add as moderator"
     footer: 
       paragrafo01: "The names and logos for WALK, WALKWEB, WALKSERVER, POSXML and Plano B\xC3\xAA are registered trademarks of Plano B\xC3\xAA, LTDA."
       paragrafo02: "All text and design are copyright \xC2\xA92005-2009 Plano B\xC3\xAA, LTDA."
