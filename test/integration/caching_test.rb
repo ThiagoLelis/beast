@@ -20,8 +20,6 @@ class NewUserFirstPostTest < ActionController::IntegrationTest
   
   def test_should_cache_forum_posts_rss
     assert_cached "forums/1/posts.rss" do
-      require 'ruby-debug'
-      debugger
       get formatted_forum_posts_path(1, :rss)
     end
   end
@@ -39,6 +37,8 @@ class NewUserFirstPostTest < ActionController::IntegrationTest
   end
   
   def assert_cached(path)
+    require 'ruby-debug'
+    debugger
     path = File.join(RAILS_ROOT, 'public', path)
     yield
     assert File.exist?(path), "oops, not cached in: #{path.inspect}"
